@@ -1,14 +1,24 @@
 import Image from 'next/image';
-import styles from './index.module.scss';
+interface ImageProps {
+  color?: string;
+  width?: string;
+  height?: string;
+  layout?: 'fixed' | 'fill' | 'intrinsic' | 'responsive';
+}
 
-const Logo: React.FC<{ color?: string }> = ({ color = 'black' }) => {
+const Logo: React.FC<ImageProps> = ({
+  color = 'black',
+  width = '120',
+  height = '40',
+  layout,
+}) => {
   return (
     <Image
-      src="/images/CatwikiLogo.svg"
-      alt="logo"
-      width="120"
-      height="40"
-      className={styles[color]}
+      src={`/images/logo/CatwikiLogo-${color}.svg`}
+      alt="Cat Wiki"
+      width={width}
+      height={height}
+      layout={layout ?? 'fixed'}
     />
   );
 };

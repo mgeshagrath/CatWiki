@@ -1,10 +1,8 @@
-import Logo from '../ui/logo';
-import styles from './index.module.scss';
-import Button from '../ui/button';
 import { useRouter } from 'next/dist/client/router';
-
-const checkSelected = (path: string, goTo: string): string =>
-  path.replace('/', '') === goTo ? styles.selected : '';
+import { checkSelected } from '../../lib/front-utilities';
+import Logo from '../ui/logo';
+import Button from '../ui/button';
+import styles from './index.module.scss';
 
 const Navigation: React.FC = () => {
   const { pathname } = useRouter();

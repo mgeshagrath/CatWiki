@@ -4,6 +4,7 @@ import styles from './index.module.scss';
 interface ButtonProps {
   type: string;
   goTo?: string;
+  target?: string;
   className?: string;
 }
 
@@ -17,11 +18,12 @@ const Button: React.FC<ButtonProps> = ({
   children,
   type,
   goTo,
+  target = '_self',
   className = '',
 }) => {
   if (type === ButtonTypes.button) {
     return (
-      <button className={`${styles.btn} ${styles.filled} ${className}`}>
+      <button className={`${className} ${styles.btn} ${styles.filled}`}>
         {children}
       </button>
     );
@@ -30,7 +32,9 @@ const Button: React.FC<ButtonProps> = ({
   if (type === ButtonTypes.link) {
     return (
       <Link href={goTo}>
-        <a className={`${styles.btn} ${className}`}>{children}</a>
+        <a target={target} className={`${className} ${styles.btn}`}>
+          {children}
+        </a>
       </Link>
     );
   }

@@ -1,0 +1,32 @@
+.header {
+  width: var(--content-width);
+  background-color: var(--black);
+  background-image: url('../header/../../../public/images/HeroImagelg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  padding: 0 10rem;
+  padding-top: 11rem;
+  padding-bottom: 15rem;
+  color: var(--white);
+  margin: var(--margin-auto);
+  border-top-left-radius: var(--border-edge);
+  border-top-right-radius: var(--border-edge);
+  margin-top: 10rem;
+  height: 55rem;
+
+  .wrapper {
+    width: 30%;
+    // height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  h2 {
+    font-size: var(--font-xlarge);
+    font-weight: var(--weight-light);
+    margin-bottom: 5rem;
+  }
+}

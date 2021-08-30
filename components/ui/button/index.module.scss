@@ -2,22 +2,11 @@
 .btn:link,
 .btn:visited {
   font-family: inherit;
-  font-weight: 400;
-  font-size: 1.8rem;
-  /* font-style: italic; */
-  /* outline: none; */
-  /* border: none; */
   text-decoration: none;
-  background-color: #fff;
-  color: #000;
-  cursor: url('../../../public/images/CatPaw.svg'), auto;
 }
 
 .filled {
-  //   /* outline: none; */
-  // /* border: none; */
+  outline: none;
+  border: none;
+  background-color: var(--white);
 }
-
-/* .btn:focus {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-} */

@@ -1,0 +1,32 @@
+.form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 7rem;
+  width: 100%;
+
+  input {
+    position: absolute;
+    width: 100%;
+
+    padding: 2.2rem;
+    padding-right: 4rem;
+    border-radius: 59px;
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+    border: none;
+    cursor: var(--cursor-black), auto;
+    transition: all 0.2s;
+
+    &:focus {
+      box-shadow: 0 0 10px #fff;
+    }
+  }
+
+  button {
+    position: absolute;
+    right: 20px;
+    cursor: var(--cursor-black), auto;
+  }
+}

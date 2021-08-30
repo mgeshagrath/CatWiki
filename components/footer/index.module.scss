@@ -1,0 +1,27 @@
+.footer {
+  width: var(--content-width);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: var(--margin-auto);
+  padding: 3rem 10rem;
+  color: var(--white);
+  background-color: var(--black);
+  border-top-left-radius: var(--border-edge);
+  border-top-right-radius: var(--border-edge);
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
+
+  & p a {
+    color: currentColor;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+
+    &:hover {
+      border-bottom: 2px solid currentColor;
+    }
+  }
+
+  & a {
+    cursor: var(--cursor-white), auto;
+  }
+}
