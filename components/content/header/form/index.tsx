@@ -1,5 +1,5 @@
-import Button from '../../../ui/button';
 import { CatIcon } from '../../../ui/icons';
+import Button from '../../../ui/button';
 import styles from './index.module.scss';
 
 const Form: React.FC = () => {

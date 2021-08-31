@@ -1,0 +1,30 @@
+.slider {
+  position: relative;
+  overflow: hidden;
+
+  .track {
+    display: flex;
+    backface-visibility: hidden;
+    animation: scroll 35s linear infinite;
+  }
+
+  figure {
+    margin-left: 5rem;
+    flex: 0 0 20%;
+    text-align: center;
+  }
+
+  img {
+    object-fit: cover;
+    border-radius: 24px;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-22rem * 5));
+  }
+}

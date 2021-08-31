@@ -1,8 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
 
 :root {
   --white: #fff;
   --black: #000;
+  --brown: #29150799;
+  --orange: #4d270c;
+  --yellow: #e3e1dc;
 
   --font-small: 1.6rem;
   --font-medium: 1.8rem;
@@ -14,12 +17,13 @@
   --border-rounded: 50%;
   --border-edge: 42px;
 
-  --weight-light: 300;
-  --weight-normal: 400;
+  --weight-light: 500;
+  --weight-normal: 600;
   --weight-bold: 700;
 
   --cursor-white: url('/images/cursor/PawPrint-white.svg');
   --cursor-black: url('/images/cursor/PawPrint-black.svg');
+  --hero: url('/images/HeroImagelg.png');
 
   --content-width: 90%;
 }
@@ -39,19 +43,24 @@ html {
 
 body {
   max-width: 144rem;
-  // width: var(--content-width);
   min-height: 100vh;
   margin: var(--margin-auto);
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: var(--font-medium);
-  font-weight: var(--weight-normal);
+  font-weight: var(--weight-light);
   color: var(--black);
+  scroll-behavior: smooth;
 }
 
-// #__next {
-//   // width: var(--content-width);
-//   // min-height: 100vh;
-//   // display: flex;
-//   // flex-direction: column;
-//   // justify-content: space-between;
-// }
+#__next {
+  width: var(--content-width);
+  margin: var(--margin-auto);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &:nth-child(2) {
+    margin-top: 18rem;
+  }
+}

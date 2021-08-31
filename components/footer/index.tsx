@@ -1,10 +1,11 @@
 import Button from '../ui/button';
+import NavFoo from '../ui/cards/navfoo';
 import Logo from '../ui/logo';
 import styles from './index.module.scss';
 
 const Footer: React.FC = () => {
   return (
-    <footer className={styles.footer}>
+    <NavFoo type="footer" className={styles.footer}>
       <p>
         <span>&copy;</span>
         <span> Created by </span>
@@ -16,7 +17,7 @@ const Footer: React.FC = () => {
       <Button type="link" goTo="/">
         <Logo color="white" />
       </Button>
-    </footer>
+    </NavFoo>
   );
 };
 export default Footer;

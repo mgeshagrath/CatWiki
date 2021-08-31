@@ -1,12 +1,27 @@
 .discover {
-  width: var(--content-width);
-  background-color: #e3e1dc;
+  margin-bottom: 10rem;
   padding: 0 10rem;
-  padding-top: 5rem;
+  padding-top: 3rem;
   padding-bottom: 10rem;
-  margin: var(--margin-auto);
+  color: var(--brown);
+  background-color: var(--yellow);
   border-bottom-left-radius: var(--border-edge);
   border-bottom-right-radius: var(--border-edge);
-  margin-bottom: 10rem;
-  height: 55rem;
+
+  h3 {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background-color: var(--orange);
+      border-radius: 77px;
+    }
+  }
 }

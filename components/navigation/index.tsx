@@ -1,56 +1,28 @@
 import { useRouter } from 'next/dist/client/router';
 import { checkSelected } from '../../lib/front-utilities';
+import { NAV_ELEMENTS } from '../../lib/consts';
 import Logo from '../ui/logo';
 import Button from '../ui/button';
+import NavItem from './navitem';
+import NavFoo from '../ui/cards/navfoo';
 import styles from './index.module.scss';
 
 const Navigation: React.FC = () => {
   const { pathname } = useRouter();
 
+  const navMarkup = NAV_ELEMENTS.map((item) => (
+    <NavItem key={item} path={item} className={checkSelected(pathname, item)}>
+      {item}
+    </NavItem>
+  ));
+
   return (
-    <nav className={styles.nav}>
+    <NavFoo type="navigation" className={styles.nav}>
       <Button type="link" goTo="/">
         <Logo />
       </Button>
-      <ul>
-        <li>
-          <Button
-            type="link"
-            goTo="/wiki"
-            className={checkSelected(pathname, 'wiki')}
-          >
-            Wiki
-          </Button>
-        </li>
-        <li>
-          <Button
-            type="link"
-            goTo="/random"
-            className={checkSelected(pathname, 'random')}
-          >
-            Random
-          </Button>
-        </li>
-        <li>
-          <Button
-            type="link"
-            goTo="/why"
-            className={checkSelected(pathname, 'why')}
-          >
-            Why a Cat?
-          </Button>
-        </li>
-        <li>
-          <Button
-            type="link"
-            goTo="/about"
-            className={checkSelected(pathname, 'about')}
-          >
-            About
-          </Button>
-        </li>
-      </ul>
-    </nav>
+      <ul>{navMarkup}</ul>
+    </NavFoo>
   );
 };
 export default Navigation;

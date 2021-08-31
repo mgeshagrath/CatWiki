@@ -1,0 +1,41 @@
+.item {
+  position: relative;
+  text-transform: capitalize;
+
+  &::after,
+  &::before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: rgba(41, 21, 7, 0.6);
+    transition: all 0.2s;
+  }
+
+  &::after {
+    content: '';
+    bottom: -4px;
+    width: 0;
+    margin: var(--margin-auto);
+    border-radius: 0 0 4px 4px;
+  }
+
+  &:hover:after {
+    bottom: -7px;
+    width: 100%;
+  }
+
+  a {
+    color: currentColor;
+    cursor: var(--cursor-black), auto;
+  }
+}
+
+.selected {
+  &::before {
+    content: '';
+    top: -7px;
+    width: 100%;
+    border-radius: 4px 4px 0 0;
+  }
+}

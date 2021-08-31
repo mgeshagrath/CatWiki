@@ -10,7 +10,6 @@ interface ButtonProps {
 
 enum ButtonTypes {
   link = 'link',
-  // navLink = 'navlink',
   button = 'button',
 }
 
@@ -40,13 +39,3 @@ const Button: React.FC<ButtonProps> = ({
   }
 };
 export default Button;
-
-// if (type === ButtonTypes.navLink) {
-//   return (
-//     <li>
-//       <Link href={goTo}>
-//         <a className={`${className}`} >{children}</a>
-//       </Link>
-//     </li>
-//   );
-// }
