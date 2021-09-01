@@ -9,11 +9,11 @@
     width: 100%;
     padding: 2.2rem;
     padding-right: 5rem;
-    border-radius: 59px;
     font-family: inherit;
     font-size: inherit;
     outline: none;
     border: none;
+    border-radius: 59px;
     transition: all 0.2s;
 
     &:focus {
@@ -29,5 +29,14 @@
   input,
   button {
     cursor: var(--cursor-black), auto;
+  }
+
+  span {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    font-size: 1rem;
+    text-align: center;
   }
 }

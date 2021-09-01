@@ -1,7 +1,7 @@
 import Heading from '../../ui/heading';
 import Logo from '../../ui/logo';
-import Form from './form';
 import styles from './index.module.scss';
+import SearchForm from './search';
 
 const Header: React.FC = () => {
   return (
@@ -11,7 +11,7 @@ const Header: React.FC = () => {
           <Logo color="white" width="290" height="90" />
         </Heading>
         <Heading type="h2">Get to know more about your cat breed</Heading>
-        <Form />
+        <SearchForm />
       </div>
     </header>
   );
