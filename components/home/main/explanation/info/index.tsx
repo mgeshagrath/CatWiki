@@ -10,7 +10,7 @@ const ExplanationInfo: React.FC = () => {
         chemicals in your body which lower your stress and anxiety leves
       </p>
       <Button type="link" goTo="/why">
-        Read more -
+        Read more
       </Button>
     </div>
   );

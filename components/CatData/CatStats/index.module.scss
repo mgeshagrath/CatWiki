@@ -1,0 +1,17 @@
+.stat {
+  margin-top: 20rem;
+  display: flex;
+  align-items: center;
+
+  :first-child {
+    margin-right: 3rem;
+  }
+
+  .wrapper {
+    display: flex;
+
+    & > *:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+}

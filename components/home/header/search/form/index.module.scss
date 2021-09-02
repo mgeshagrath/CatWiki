@@ -14,7 +14,7 @@
     outline: none;
     border: none;
     border-radius: 59px;
-    transition: all 0.2s;
+    // transition: all 0.2s;
 
     &:focus {
       box-shadow: 0 0 10px var(--white);
@@ -26,10 +26,10 @@
     right: 20px;
   }
 
-  input,
-  button {
-    cursor: var(--cursor-black), auto;
-  }
+  // input,
+  // button {
+  //   cursor: var(--cursor-black), auto;
+  // }
 
   span {
     position: absolute;

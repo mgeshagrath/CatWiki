@@ -5,7 +5,7 @@ import styles from './index.module.scss';
 
 type Query = (query: string) => void;
 
-const Form: React.FC<{ onQuery: Query }> = ({ onQuery }) => {
+const Form: React.FC<{ onQuery?: Query }> = ({ onQuery }) => {
   const { value, error, changeHandler } = useInputChanged(onQuery);
 
   return (

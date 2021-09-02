@@ -31,7 +31,13 @@
   }
 
   a {
-    text-transform: uppercase;
     color: var(--brown);
+    text-transform: uppercase;
+    // border-bottom: 1px solid transparent;
+    // transition: all 0.2s;
+
+    // &:hover {
+    //   border-bottom: 1px solid currentColor;
+    // }
   }
 }

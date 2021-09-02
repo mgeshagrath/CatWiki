@@ -7,7 +7,7 @@ const DiscoverInfo: React.FC = () => {
     <div className={styles.info}>
       <Heading type="h2">66+ Breeds For you to disover</Heading>
       <Button type="link" goTo="/wiki">
-        see more -{' '}
+        see more
       </Button>
     </div>
   );

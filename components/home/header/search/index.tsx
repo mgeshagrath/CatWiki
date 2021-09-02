@@ -30,7 +30,7 @@ const SearchForm: React.FC = () => {
 
         setKitties((_) => [...response.data]);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       } finally {
         setLoading(false);
       }

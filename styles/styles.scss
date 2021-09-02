@@ -4,6 +4,8 @@
   --white: #fff;
   --black: #000;
   --brown: #29150799;
+  --brown-dark: #291507;
+
   --orange: #4d270c;
   --yellow: #e3e1dc;
 
@@ -48,7 +50,8 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: var(--font-medium);
   font-weight: var(--weight-light);
-  color: var(--black);
+  // color: var(--black);
+  color: var(--brown-dark);
   scroll-behavior: smooth;
 }
 
