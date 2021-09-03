@@ -1,7 +1,14 @@
+import { Fragment } from 'react';
+import CatGrid from '../../components/CatData/CatGrid';
 import CatStats from '../../components/CatData/CatStats';
 
 const CatIdPage: React.FC = () => {
-  return <CatStats />;
+  return (
+    <Fragment>
+      <CatStats />
+      <CatGrid />
+    </Fragment>
+  );
 };
 export default CatIdPage;
 

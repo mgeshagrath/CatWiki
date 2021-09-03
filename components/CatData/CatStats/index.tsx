@@ -1,18 +1,48 @@
-import Bar from './Bar';
-import styles from './index.module.scss';
+import { Fragment } from 'react';
+import Item from './Item';
 
-const value = 2;
+const DummyData = [
+  {
+    property: 'Adaptability',
+    score: 5,
+  },
+  {
+    property: 'Affection level',
+    score: 5,
+  },
+  {
+    property: 'Child Friendly',
+    score: 4,
+  },
+  {
+    property: 'Grooming:',
+    score: 1,
+  },
+  {
+    property: 'Intelligence',
+    score: 5,
+  },
+  {
+    property: 'Health issues',
+    score: 3,
+  },
+  {
+    property: 'Social needs',
+    score: 5,
+  },
+  {
+    property: 'Stranger friendly',
+    score: 3,
+  },
+];
 
 const CatStats: React.FC = () => {
-  const barMarkup = Array(5)
-    .fill(0)
-    .map((_, i) => <Bar key={Math.random()} on={i + 1 <= value && true} />);
-
   return (
-    <div className={styles.stat}>
-      <span>Adaptability: </span>
-      <div className={styles.wrapper}>{barMarkup}</div>
-    </div>
+    <Fragment>
+      {DummyData.map((item) => (
+        <Item key={Math.random()} data={item} />
+      ))}
+    </Fragment>
   );
 };
 export default CatStats;

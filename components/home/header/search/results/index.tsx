@@ -1,4 +1,4 @@
-import ListItem from '../../../../ui/list-item-linked';
+import ListItem from '../../../../ui/ListItem';
 import styles from './index.module.scss';
 
 interface Kitties {

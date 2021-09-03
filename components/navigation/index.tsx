@@ -4,7 +4,7 @@ import { NAV_ELEMENTS } from '../../lib/CONSTANTS';
 import Logo from '../ui/logo';
 import Button from '../ui/button';
 import NavFoo from '../ui/cards/navfoo';
-import ListItem from '../ui/list-item-linked';
+import ListItem from '../ui/ListItem';
 import styles from './index.module.scss';
 
 const Navigation: React.FC = () => {

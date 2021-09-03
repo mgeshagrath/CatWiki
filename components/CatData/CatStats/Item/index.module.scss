@@ -1,13 +1,15 @@
-.stat {
+.stats {
   margin-top: 20rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
-  :first-child {
-    margin-right: 3rem;
+  :nth-child(1) {
+    font-size: var(--font-small);
+    font-weight: var(--weight-bold);
   }
 
-  .wrapper {
+  :nth-child(2) {
     display: flex;
 
     & > *:not(:last-child) {
