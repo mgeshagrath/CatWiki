@@ -2,20 +2,25 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 80px;
+  top: var(--spacing-86);
   max-height: 23rem;
   padding: 1rem;
-  border-radius: 24px;
+  color: var(--black);
   background-color: var(--white);
+  box-shadow: 0 0 20px var(--black-20);
   overflow: auto;
   z-index: 89;
-  list-style-type: none;
+  list-style: none;
+
+  &,
+  li {
+    border-radius: var(--border-medium);
+  }
 
   li {
-    border-radius: 24px;
-    padding: 0 1.5rem;
+    padding: 0 var(--spacing-16);
     height: 5.5rem;
-    color: var(--black);
+    // color: var(--black);
     transition: all 0.2s;
 
     &:hover {

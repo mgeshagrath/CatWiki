@@ -9,14 +9,22 @@
   }
 
   figure {
-    margin-left: 5rem;
+    margin-left: var(--spacing-56);
     flex: 0 0 20%;
     text-align: center;
+
+    a {
+      gap: var(--spacing-20);
+    }
   }
 
   img {
     object-fit: cover;
-    border-radius: 24px;
+    border-radius: var(--border-medium);
+  }
+
+  figcaption {
+    color: var(--primary);
   }
 }
 

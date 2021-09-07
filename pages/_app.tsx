@@ -3,6 +3,7 @@ import { Fragment } from 'react';
 import Footer from '../components/footer';
 import Navigation from '../components/navigation';
 import '../styles/styles.scss';
+import '../styles/global.scss';
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (

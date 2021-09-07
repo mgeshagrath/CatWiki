@@ -1,0 +1,11 @@
+.stats {
+  // display: flex;
+  align-items: center;
+  // justify-content: space-between;
+  width: 85%;
+
+  :nth-child(2) {
+    display: flex;
+    gap: 1rem;
+  }
+}

@@ -5,7 +5,7 @@ import SearchForm from './search';
 
 const Header: React.FC = () => {
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} flex-between flex-column`}>
       <div className={styles.wrapper}>
         <Heading type="h1">
           <Logo color="white" width="290" height="90" />

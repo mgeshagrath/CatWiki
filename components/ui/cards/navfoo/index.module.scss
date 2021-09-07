@@ -1,6 +1,6 @@
 .card {
-  display: flex;
-  justify-content: space-between;
+  // display: flex;
+  // justify-content: space-between;
   align-items: center;
-  padding: 3rem 10rem;
+  padding: var(--spacing-30) var(--spacing-98);
 }

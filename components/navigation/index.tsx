@@ -24,7 +24,7 @@ const Navigation: React.FC = () => {
       <Button type="link" goTo="/">
         <Logo />
       </Button>
-      <ul>{navMarkup}</ul>
+      <ul className="flex-between">{navMarkup}</ul>
     </NavFoo>
   );
 };

@@ -1,0 +1,10 @@
+.bar {
+  width: 6rem;
+  height: 1.2rem;
+  background-color: var(--bar-light);
+  border-radius: var(--border-small);
+}
+
+.on {
+  background-color: var(--bar-dark);
+}

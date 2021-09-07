@@ -1,7 +1,6 @@
+import { useEffect, useState } from 'react';
 import Results from './results';
 import Form from './form';
-import styles from './index.module.scss';
-import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 interface Kitty {
@@ -55,7 +54,7 @@ const SearchForm: React.FC = () => {
   }, [query]);
 
   return (
-    <div className={styles.search}>
+    <div className="relative">
       <Form onQuery={(query: string) => setQuery(query)} />
       {query.length > 3 && <Results kitties={kitties} loading={loading} />}
     </div>

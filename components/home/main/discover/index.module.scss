@@ -1,16 +1,16 @@
 .discover {
-  margin-bottom: 10rem;
-  padding: 0 10rem;
-  padding-top: 3rem;
-  padding-bottom: 10rem;
+  margin-bottom: var(--spacing-98);
+  padding: 0 var(--spacing-98);
+  padding-top: var(--spacing-30);
+  padding-bottom: var(--spacing-98);
   // color: var(--brown);
-  background-color: var(--yellow);
-  border-bottom-left-radius: var(--border-edge);
-  border-bottom-right-radius: var(--border-edge);
+  background-color: var(--bgc-light);
+  border-bottom-left-radius: var(--border-large);
+  border-bottom-right-radius: var(--border-large);
 
   h3 {
     position: relative;
-    margin-bottom: 3rem;
+    margin-bottom: var(--spacing-30);
     padding-bottom: 1rem;
 
     &::after {
@@ -20,8 +20,8 @@
       left: 0;
       width: 60px;
       height: 4px;
-      background-color: var(--orange);
-      border-radius: 77px;
+      background-color: var(--acc-dark);
+      border-radius: var(--border-xxlarge);
     }
   }
 }

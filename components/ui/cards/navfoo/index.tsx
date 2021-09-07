@@ -12,10 +12,16 @@ enum CardType {
 
 const NavFoo: React.FC<CardProps> = ({ type, className, children }) => {
   if (type === CardType.nav)
-    return <nav className={`${className} ${styles.card}`}>{children}</nav>;
+    return (
+      <nav className={`${className} ${styles.card} flex-between`}>
+        {children}
+      </nav>
+    );
   if (type === CardType.foo)
     return (
-      <footer className={`${className} ${styles.card}`}>{children}</footer>
+      <footer className={`${className} ${styles.card} flex-between`}>
+        {children}
+      </footer>
     );
 };
 export default NavFoo;

@@ -1,26 +1,26 @@
 .header {
-  padding: 0 10rem;
-  padding-top: 11rem;
+  padding: 0 var(--spacing-98);
+  padding-top: var(--spacing-98);
   padding-bottom: 15rem;
   color: var(--white);
-  background-color: var(--black);
+  background-color: var(--bgc-dark);
   background-image: var(--hero);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right;
-  border-top-left-radius: var(--border-edge);
-  border-top-right-radius: var(--border-edge);
+  border-top-left-radius: var(--border-large);
+  border-top-right-radius: var(--border-large);
 
   .wrapper {
     width: 35%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
   }
 
   h2 {
-    font-size: var(--font-xlarge);
+    font-size: var(--font-large);
     font-weight: var(--weight-light);
-    margin-bottom: 5rem;
+    margin-bottom: var(--spacing-56);
   }
 }

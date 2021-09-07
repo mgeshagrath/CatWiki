@@ -3,7 +3,7 @@ import styles from './index.module.scss';
 
 const ExplanationInfo: React.FC = () => {
   return (
-    <div className={styles.info}>
+    <div className={`${styles.info} flex-column`}>
       <h2>Why should you have a cat?</h2>
       <p>
         Having a cat around you can actually trigger the release of calming

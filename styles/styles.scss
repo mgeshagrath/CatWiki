@@ -1,33 +1,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
 
 :root {
+  /* COLORS */
   --white: #fff;
   --black: #000;
-  --brown: #29150799;
-  --brown-dark: #291507;
+  --primary: #291507;
+  --acc-light: #dec68b;
+  // --acc-medium: #544439;
+  --acc-dark: #4d270c;
+  --bgc-dark: #050709;
+  --bgc-light: #e3e1dc;
+  --bar-light: #e0e0e0;
+  --bar-dark: #544439;
 
-  --orange: #4d270c;
-  --yellow: #e3e1dc;
+  /* TRANSPARENT */
+  --grey-10: rgba(151, 151, 151, 0.1);
+  --primary-60: rgba(41, 21, 7, 0.6);
+  --black-20: rgba(0, 0, 0, 0.2);
 
+  /* FONT FAMILIY */
+
+  --font-primary: 'Montserrat', sans-serif;
+
+  /* FONTS */
+  --font-xsmall: 1rem;
   --font-small: 1.6rem;
   --font-medium: 1.8rem;
-  --font-large: 2rem;
-  --font-xlarge: 2.4rem;
+  --font-large: 2.4rem;
+  --font-xlarge: 3.6rem;
+  --font-xxlarge: 4.8rem;
 
-  --margin-auto: 0 auto;
-
-  --border-rounded: 50%;
-  --border-edge: 42px;
-
+  /* WEIGHTS */
   --weight-light: 500;
   --weight-normal: 600;
   --weight-bold: 700;
 
+  /* BORDERS RADIUS */
+  --border-small: 8px;
+  --border-medium: 24px;
+  --border-large: 42px;
+  --border-xlarge: 59px;
+  --border-xxlarge: 77px;
+
+  /* SPACING SYSTEM */
+  --spacing-12: 1.2rem;
+  --spacing-14: 1.4rem;
+  --spacing-16: 1.6rem;
+  --spacing-18: 1.8rem;
+  --spacing-20: 2rem;
+  --spacing-24: 2.4rem;
+  --spacing-30: 3rem;
+  --spacing-36: 3.6rem;
+  --spacing-44: 4.4rem;
+  --spacing-56: 5.6rem;
+  --spacing-62: 6.2rem;
+  --spacing-74: 7.4rem;
+  --spacing-86: 8.6rem;
+  --spacing-98: 9.8rem;
+
+  /* UTILITY */
+  --margin-auto: 0 auto;
+  --content-width: 90%;
+  --max-width: 144rem;
+  --min-height: 100vh;
+
   --cursor-white: url('/images/cursor/PawPrint-white.svg');
   --cursor-black: url('/images/cursor/PawPrint-black.svg');
   --hero: url('/images/HeroImagelg.png');
-
-  --content-width: 90%;
 }
 
 *,
@@ -44,21 +83,20 @@ html {
 }
 
 body {
-  max-width: 144rem;
-  min-height: 100vh;
+  max-width: var(--max-width);
+  min-height: var(--min-height);
   margin: var(--margin-auto);
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-primary);
   font-size: var(--font-medium);
   font-weight: var(--weight-light);
-  // color: var(--black);
-  color: var(--brown-dark);
-  scroll-behavior: smooth;
+  color: var(--primary);
+  // scroll-behavior: smooth;
 }
 
 #__next {
   width: var(--content-width);
   margin: var(--margin-auto);
-  min-height: 100vh;
+  min-height: var(--min-height);
   display: flex;
   flex-direction: column;
   justify-content: space-between;

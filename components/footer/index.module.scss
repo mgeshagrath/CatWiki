@@ -1,12 +1,12 @@
 .footer {
-  margin-top: 10rem;
+  margin-top: var(--spacing-98);
   color: var(--white);
   background-color: var(--black);
-  border-top-left-radius: var(--border-edge);
-  border-top-right-radius: var(--border-edge);
-  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
+  border-top-left-radius: var(--border-large);
+  border-top-right-radius: var(--border-large);
+  // box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
 
-  & p a {
+  p a {
     color: currentColor;
     border-bottom: 2px solid transparent;
     transition: all 0.2s;
@@ -16,7 +16,7 @@
     }
   }
 
-  & a {
-    cursor: var(--cursor-white), auto;
-  }
+  // & a {
+  //   cursor: var(--cursor-white), auto;
+  // }
 }

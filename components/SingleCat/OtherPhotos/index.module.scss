@@ -1,0 +1,16 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: var(--spacing-44);
+
+  :nth-child(1) {
+    font-size: var(--font-xlarge);
+    font-weight: var(--weight-normal);
+    grid-column: 1 / -1;
+  }
+}
+
+.img {
+  border-radius: var(--border-medium);
+  object-fit: cover;
+}

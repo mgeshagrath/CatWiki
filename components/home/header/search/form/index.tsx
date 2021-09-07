@@ -1,6 +1,6 @@
 import { useInputChanged } from '../../../../../lib/hooks/input';
-import { CatIcon } from '../../../../ui/icons';
-import Button from '../../../../ui/button';
+// import { CatIcon } from '../../../../ui/icons';
+// import Button from '../../../../ui/button';
 import styles from './index.module.scss';
 
 type Query = (query: string) => void;
@@ -17,9 +17,9 @@ const Form: React.FC<{ onQuery?: Query }> = ({ onQuery }) => {
         onChange={changeHandler}
         value={value}
       />
-      <Button type="button">
+      {/* <Button type="button">
         <CatIcon className={styles.icon} />
-      </Button>
+      </Button> */}
     </form>
   );
 };
