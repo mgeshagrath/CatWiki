@@ -1,17 +1,18 @@
 import type { AppProps } from 'next/app';
-import { Fragment } from 'react';
+import { Provider } from 'react-redux';
 import Footer from '../components/footer';
 import Navigation from '../components/navigation';
-import '../styles/styles.scss';
+import store from '../store/store';
 import '../styles/global.scss';
+import '../styles/styles.scss';
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
-    <Fragment>
+    <Provider store={store}>
       <Navigation />
       <Component {...pageProps} />
       <Footer />
-    </Fragment>
+    </Provider>
   );
 };
 
