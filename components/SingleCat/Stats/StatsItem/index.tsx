@@ -3,13 +3,13 @@ import styles from './index.module.scss';
 
 interface StatsItemProps {
   data: {
-    property: string;
+    quality: string;
     score: number;
   };
 }
 
 const StatsItem: React.FC<StatsItemProps> = ({ data }) => {
-  const { property, score } = data;
+  const { quality, score } = data;
 
   const barMarkup = Array(5)
     .fill(0)
@@ -17,7 +17,7 @@ const StatsItem: React.FC<StatsItemProps> = ({ data }) => {
 
   return (
     <div className={`${styles.stats} flex-between`}>
-      <span className="bold">{`${property}: `}</span>
+      <span className="bold capitalize">{`${quality}: `}</span>
       <div>{barMarkup}</div>
     </div>
   );

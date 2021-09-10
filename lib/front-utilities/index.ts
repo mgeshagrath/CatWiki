@@ -4,6 +4,9 @@ import { createPortal } from 'react-dom';
 export const checkSelected = (path: string, goTo: string): string =>
   path.replace('/', '') === goTo ? 'selected' : '';
 
+export const createPath = (value: string): string =>
+  value.replaceAll(' ', '').toLowerCase();
+
 export const ClientPortal = (
   children: ReactElement,
   selector: string

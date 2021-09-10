@@ -15,7 +15,7 @@ interface Kitties {
 }
 
 interface HomeProps {
-  data: Kitties[] | { message: string };
+  data: Kitties[];
 }
 
 export const HomePage: React.FC<HomeProps> = ({ data }) => {
@@ -31,20 +31,31 @@ export const HomePage: React.FC<HomeProps> = ({ data }) => {
 export default HomePage;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { data }: AxiosResponse<Kitties[]> = await catApi.get(
-    'breeds?limit=8',
-    {
-      headers: {
-        'x-api-key': 'dec74740-77ab-4562-817d-2d0456e1a1aa',
-      },
-    }
-  );
+  const { data }: AxiosResponse<Kitties[]> = await catApi.get('breeds', {
+    headers: {
+      'x-api-key': 'dec74740-77ab-4562-817d-2d0456e1a1aa',
+    },
+  });
 
-  const kitties = data.map((kitty) => ({
-    id: kitty.id,
-    name: kitty.name,
-    image: kitty.image.url,
-  }));
+  const kitties = data
+    .reduce((arr, { name, image, id }) => {
+      if (!name || !image?.url || !id) return arr;
+
+      return [
+        ...arr,
+        {
+          kitty: {
+            id,
+            name,
+            image: image.url,
+          },
+          sort: Math.random(),
+        },
+      ];
+    }, [])
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ kitty }) => kitty)
+    .slice(0, 8);
 
   return {
     props: {
@@ -52,3 +63,12 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   };
 };
+
+// const kitties = data
+//   .map((kitty) => ({
+//     name: kitty.name,
+//     image: kitty?.image?.url ?? '',
+//     sort: Math.random(),
+//   }))
+//   .sort((a, b) => a.sort - b.sort);
+// .slice(0, 8);

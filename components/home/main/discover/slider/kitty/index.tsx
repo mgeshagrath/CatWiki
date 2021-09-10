@@ -15,7 +15,11 @@ const KittyCard: React.FC<KittyProps> = ({ kitty }) => {
 
   return (
     <figure>
-      <Button type="link" goTo={`/greeds/${name}`} className="flex-column">
+      <Button
+        type="link"
+        goTo={`/breeds/${name.toLowerCase()}`}
+        className="flex-column"
+      >
         <Image src={`${image}`} width="220" height="220" />
         <figcaption>{name}</figcaption>
       </Button>

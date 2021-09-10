@@ -1,12 +1,13 @@
 interface DescriptionItemProps {
-  data: {
-    label: string;
-    content: string;
-  };
+  label: string;
+  content: string;
 }
 
-const DescriptionItem: React.FC<DescriptionItemProps> = ({ data }) => {
-  const { label, content } = data;
+const DescriptionItem: React.FC<DescriptionItemProps> = ({
+  label,
+  content,
+}) => {
+  // const { label, content } = data;
   return (
     <p>
       <span className="bold">{`${label}: `}</span>

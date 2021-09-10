@@ -5,7 +5,7 @@ import styles from './index.module.scss';
 const DiscoverInfo: React.FC = () => {
   return (
     <div className={`${styles.info} flex-between`}>
-      <Heading type="h2">66+ Breeds For you to disover</Heading>
+      <Heading type="h2">66+ Breeds For you to discover!</Heading>
       <Button type="link" goTo="/wiki">
         see more
       </Button>

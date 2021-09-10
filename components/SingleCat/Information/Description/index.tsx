@@ -1,35 +1,24 @@
 import { Fragment } from 'react';
+import { useAppSelector } from '../../../../store/types';
 import Heading from '../../../ui/heading';
 import DescriptionItem from './DescriptionItem';
 
-const content = [
-  {
-    label: 'Temperament',
-    content: 'Alert, Agile, Energetic, Demanding, Intelligent',
-  },
-  {
-    label: 'Origin',
-    content: 'Origin',
-  },
-  {
-    label: 'Life Span',
-    content: 'A12 - 15 years',
-  },
-];
-
 const Description: React.FC = () => {
+  const { name, description, lifeSpan, origin, temperament } = useAppSelector(
+    (state) => state.singleCat
+  );
+
   return (
     <Fragment>
-      <Heading type="h1">Bengal</Heading>
-      <p>
-        Bengals are a lot of fun to live with, but theyre definitely not the cat
-        for everyone, or for first-time cat owners. Extremely intelligent,
-        curious and active, they demand a lot of interaction and woe betide the
-        owner who doesnt provide it.
-      </p>
-      {content.map((item) => (
+      <Heading type="h1">{name}</Heading>
+      <p>{description}</p>
+      <DescriptionItem label="Temperament" content={temperament} />
+      <DescriptionItem label="Origin" content={origin} />
+      <DescriptionItem label="Life Span" content={lifeSpan} />
+
+      {/* {content.map((item) => (
         <DescriptionItem key={Math.random()} data={item} />
-      ))}
+      ))} */}
     </Fragment>
   );
 };

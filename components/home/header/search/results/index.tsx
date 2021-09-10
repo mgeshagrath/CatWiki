@@ -13,7 +13,7 @@ interface ResultsProps {
 
 const Results: React.FC<ResultsProps> = ({ kitties, loading }) => {
   const resultsMarkup = kitties.map((item) => (
-    <ListItem key={item.id} path={item.name}>
+    <ListItem key={item.id} path={`/breeds${item.name.toLowerCase()}`}>
       {item.name}
     </ListItem>
   ));

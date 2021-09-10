@@ -6,6 +6,8 @@ interface SingleCat {
   origin: string;
   lifeSpan: string;
   description: string;
+  temperament: string;
+  profileImage: string;
   stats: {
     quality: string;
     score: number;
@@ -14,6 +16,7 @@ interface SingleCat {
     pageName: string;
     url: string;
   }[];
+  images: string[];
 }
 
 const initialState = <SingleCat>{};
@@ -22,8 +25,8 @@ const singleCatSlice = createSlice({
   name: 'single cat',
   initialState,
   reducers: {
-    setCat(state, action) {
-      state = { ...action.payload };
+    setCat(_, action) {
+      return { ...action.payload };
     },
   },
 });
