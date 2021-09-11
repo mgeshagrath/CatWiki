@@ -1,15 +1,22 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 import { useAppSelector } from '../../../store/types';
+import LoadedImage from '../../ui/LoadedImage';
+import Spinner from '../../ui/spinner';
 import styles from './index.module.scss';
 
 const MoreDetails: React.FC = () => {
   const { profileImage } = useAppSelector((state) => state.singleCat);
+  const imageConfig = {
+    imagePath: profileImage,
+    width: '380px',
+    height: '380px',
+  };
 
   // console.log(profileImage);
   return (
     <div className={`${styles.moreDetails} flex-column`}>
-      {profileImage && <Image src={profileImage} width="380" height="380" />}
-      {!profileImage && <p>Loading...</p>}
+      {profileImage && <LoadedImage data={imageConfig} />}
+      {!profileImage && <Spinner />}
       <div>
         {/* <h3>Aqui iran otras cosas</h3>
         <h4>Tal vez una lista</h4>

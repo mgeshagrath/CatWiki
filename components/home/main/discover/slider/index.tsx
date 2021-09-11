@@ -38,11 +38,13 @@ import KittyCard from './kitty';
 // ];
 
 const Slider: React.FC = () => {
-  const { cats } = useAppSelector((state) => state.allCats);
+  const catsList = useAppSelector((state) => state.allCats);
 
-  const kittiesCards = cats.map((kitty) => (
-    <KittyCard key={kitty.id} kitty={kitty} />
-  ));
+  const kittiesCards = catsList
+    ?.slice(0, 8)
+    .map((kitty) => <KittyCard key={kitty.id} kitty={kitty} />);
+
+  // console.log(catsList);
 
   return (
     <div className={styles.slider}>

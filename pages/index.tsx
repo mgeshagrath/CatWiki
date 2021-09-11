@@ -6,19 +6,19 @@ import { catsActions } from '../store/slices/catsSlice';
 import { useAppDispatch } from '../store/types';
 import Home from '../components/home';
 
-interface Kitties {
-  id: string;
-  name: string;
-  image: {
-    url: string;
-  };
-}
+// interface Kitties {
+//   id: string;
+//   name: string;
+//   image: {
+//     url: string;
+//   };
+// }
 
-interface HomeProps {
-  data: Kitties[];
-}
+// interface HomeProps {
+//   data: Kitties[];
+// }
 
-export const HomePage: React.FC<HomeProps> = ({ data }) => {
+export const HomePage: React.FC<{ data: CatApiResponse[] }> = ({ data }) => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -31,35 +31,32 @@ export const HomePage: React.FC<HomeProps> = ({ data }) => {
 export default HomePage;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { data }: AxiosResponse<Kitties[]> = await catApi.get('breeds', {
+  const { data }: AxiosResponse<CatApiResponse[]> = await catApi.get('breeds', {
     headers: {
       'x-api-key': 'dec74740-77ab-4562-817d-2d0456e1a1aa',
     },
   });
 
-  const kitties = data
-    .reduce((arr, { name, image, id }) => {
-      if (!name || !image?.url || !id) return arr;
+  // const data = response.reduce((arr, { name, image, id, description }) => {
+  //   if (!name || !image?.url || !id || !description) return arr;
 
-      return [
-        ...arr,
-        {
-          kitty: {
-            id,
-            name,
-            image: image.url,
-          },
-          sort: Math.random(),
-        },
-      ];
-    }, [])
-    .sort((a, b) => a.sort - b.sort)
-    .map(({ kitty }) => kitty)
-    .slice(0, 8);
+  //   return [
+  //     ...arr,
+  //     {
+  //       id,
+  //       name,
+  //       description,
+  //       image: image.url,
+  //     },
+  //   ];
+  // }, []);
+  // .sort((a, b) => a.sort - b.sort)
+  // .map(({ kitty }) => kitty);
+  // .slice(0, 8);
 
   return {
     props: {
-      data: kitties,
+      data,
     },
   };
 };

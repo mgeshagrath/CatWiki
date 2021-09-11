@@ -1,28 +1,34 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface Cats {
-  cats: {
-    name: string;
-    id: string;
-    image: {
-      url: string;
-    };
-  }[];
-}
-
-const initialState: Cats = {
-  cats: [],
-};
+const initialState = <Cat[]>[];
 
 const catsSlice = createSlice({
   name: 'cats',
   initialState,
   reducers: {
-    setCats(state, action) {
-      state.cats = action.payload;
-    },
-    clearCats(state) {
-      state.cats = [];
+    setCats(_, action: PayloadAction<CatApiResponse[]>) {
+      const { payload: cats } = action;
+      const cat: Cat[] = cats
+        .reduce((arr, { name, image, id, description }) => {
+          if (!name || !image?.url || !id || !description) return arr;
+
+          return [
+            ...arr,
+            {
+              catData: {
+                id,
+                name,
+                description,
+                image: image.url,
+              },
+              sort: Math.random(),
+            },
+          ];
+        }, [])
+        .sort((a, b) => a.sort - b.sort)
+        .map(({ catData }) => catData);
+
+      return cat;
     },
   },
 });

@@ -1,8 +1,9 @@
 import { AxiosResponse } from 'axios';
 import { GetStaticPaths, GetStaticProps } from 'next';
-// import { useRouter } from 'next/dist/client/router';
+import { useRouter } from 'next/dist/client/router';
 import { useEffect } from 'react';
 import SingleCat from '../../components/SingleCat';
+import Spinner from '../../components/ui/spinner';
 import { groupKittyData } from '../../lib/back-utilities';
 import { catApi } from '../../lib/services';
 import { singleCatActions } from '../../store/slices/singleCatSlice';
@@ -48,14 +49,15 @@ interface SingleCatReturn {
 }
 
 const CatIdPage: React.FC<{ data: SingleCatReturn }> = ({ data }) => {
-  // const { isFallback } = useRouter();
-
-  // console.log(isFallback);
-  // if (isFallback)
-  //   return (
-  //     <p style={{ textAlign: 'center', marginTop: '100px' }}>Loading...</p>
-  //   );
+  const { isFallback } = useRouter();
   const dispatch = useAppDispatch();
+
+  if (isFallback)
+    return (
+      <div style={{ textAlign: 'center', marginTop: '100px' }}>
+        <Spinner />
+      </div>
+    );
 
   useEffect(() => {
     dispatch(singleCatActions.setCat(data));
@@ -122,7 +124,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
-    fallback: 'blocking',
+    fallback: true,
   };
 };
 

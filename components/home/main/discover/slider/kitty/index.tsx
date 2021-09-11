@@ -1,17 +1,21 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 import Button from '../../../../../ui/button';
+import LoadedImage from '../../../../../ui/LoadedImage';
 
 interface KittyProps {
   kitty: {
     name: string;
-    image: {
-      url: string;
-    };
+    image: string;
   };
 }
 
 const KittyCard: React.FC<KittyProps> = ({ kitty }) => {
   const { name, image } = kitty;
+  const imageConfig = {
+    imagePath: image,
+    width: '220px',
+    height: '220px',
+  };
 
   return (
     <figure>
@@ -20,7 +24,9 @@ const KittyCard: React.FC<KittyProps> = ({ kitty }) => {
         goTo={`/breeds/${name.toLowerCase()}`}
         className="flex-column"
       >
-        <Image src={`${image}`} width="220" height="220" />
+        {/* <div>dimentions</div> */}
+        <LoadedImage data={imageConfig} />
+        {/* <Image src={`${image}`} width="220" height="220" /> */}
         <figcaption>{name}</figcaption>
       </Button>
     </figure>
