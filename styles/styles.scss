@@ -57,6 +57,7 @@
   --spacing-74: 7.4rem;
   --spacing-86: 8.6rem;
   --spacing-98: 9.8rem;
+  --app-spacing: 18rem;
 
   /* UTILITY */
   --margin-auto: 0 auto;
@@ -101,7 +102,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
 
-  &:nth-child(2) {
+  & > *:nth-child(2) {
     margin-top: 18rem;
   }
 }

@@ -1,13 +1,13 @@
-import { AxiosResponse } from 'axios';
-import { GetStaticPaths, GetStaticProps } from 'next';
-import { useRouter } from 'next/dist/client/router';
-import { useEffect } from 'react';
-import SingleCat from '../../components/SingleCat';
-import Spinner from '../../components/ui/spinner';
-import { groupKittyData } from '../../lib/back-utilities';
-import { catApi } from '../../lib/services';
-import { singleCatActions } from '../../store/slices/singleCatSlice';
-import { useAppDispatch } from '../../store/types';
+import { AxiosResponse } from "axios";
+import { GetStaticPaths, GetStaticProps } from "next";
+import { useRouter } from "next/dist/client/router";
+import { useEffect } from "react";
+import SingleCat from "../../components/SingleCat";
+import Spinner from "../../components/ui/spinner";
+import { groupKittyData } from "../../lib/back-utilities";
+import { catApi } from "../../lib/services";
+import { singleCatActions } from "../../store/slices/singleCatSlice";
+import { useAppDispatch } from "../../store/types";
 
 interface SingleCatProps {
   id: string;
@@ -52,16 +52,16 @@ const CatIdPage: React.FC<{ data: SingleCatReturn }> = ({ data }) => {
   const { isFallback } = useRouter();
   const dispatch = useAppDispatch();
 
-  if (isFallback)
+  useEffect(() => {
+    dispatch(singleCatActions.setCat(data));
+  }, [data]);
+
+  if (isFallback || !data)
     return (
-      <div style={{ textAlign: 'center', marginTop: '100px' }}>
+      <div style={{ textAlign: "center", marginTop: "100px" }}>
         <Spinner />
       </div>
     );
-
-  useEffect(() => {
-    dispatch(singleCatActions.setCat(data));
-  }, []);
 
   return <SingleCat />;
 };
@@ -72,7 +72,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     `breeds/search?q=${params.catId}`,
     {
       headers: {
-        'x-api-key': 'dec74740-77ab-4562-817d-2d0456e1a1aa',
+        "x-api-key": "dec74740-77ab-4562-817d-2d0456e1a1aa",
       },
     }
   );
@@ -83,7 +83,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     `images/search?limit=15&breed_id=${kitty.id}`,
     {
       headers: {
-        'x-api-key': 'dec74740-77ab-4562-817d-2d0456e1a1aa',
+        "x-api-key": "dec74740-77ab-4562-817d-2d0456e1a1aa",
       },
     }
   );

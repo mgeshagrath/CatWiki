@@ -1,5 +1,5 @@
-import { Fragment, useState } from 'react';
-import Spinner from '../spinner';
+import { Fragment, useState } from "react";
+import Spinner from "../spinner";
 // import Image from 'next/image';
 
 interface ImageConfig {
@@ -21,9 +21,9 @@ const LoadedImage: React.FC<ImageConfig> = ({ data }) => {
           style={{
             width: width,
             height: height,
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <Spinner />
@@ -34,17 +34,17 @@ const LoadedImage: React.FC<ImageConfig> = ({ data }) => {
         style={{
           width: width,
           height: height,
-          display: `${!isLoaded ? 'none' : 'block'}`,
-          overflow: 'hidden',
+          display: `${!isLoaded ? "none" : "block"}`,
+          overflow: "hidden",
         }}
       >
         <img
           src={imagePath}
           style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            borderRadius: '71px',
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            borderRadius: "21px",
           }}
           onLoad={() => setIsLoaded(true)}
         />

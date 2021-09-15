@@ -40,6 +40,9 @@
 .none {
   display: none;
 }
+.mar-top-app {
+  margin-top: var(--app-spacing);
+}
 
 .decoration {
   position: relative;
