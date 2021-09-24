@@ -1,5 +1,5 @@
-import axios, { AxiosResponse } from 'axios';
-import { NextApiRequest, NextApiResponse } from 'next';
+import axios, { AxiosResponse } from "axios";
+import { NextApiRequest, NextApiResponse } from "next";
 
 interface Kitties {
   id: string;
@@ -13,10 +13,10 @@ const handler = async (
 ): Promise<Kitties[] | { message: string }> => {
   try {
     const response: AxiosResponse<Kitties[]> = await axios.get(
-      'https://api.thecatapi.com/v1/breeds?limit=8',
+      "https://api.thecatapi.com/v1/breeds?limit=8",
       {
         headers: {
-          'x-api-key': 'dec74740-77ab-4562-817d-2d0456e1a1aa',
+          "x-api-key": "dec74740-77ab-4562-817d-2d0456e1a1aa",
         },
       }
     );

@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 interface Status {
   loading: boolean;
@@ -11,7 +11,7 @@ const initialState: Status = {
 };
 
 const statusSlice = createSlice({
-  name: 'status',
+  name: "status",
   initialState,
   reducers: {
     toggleLoading(state) {

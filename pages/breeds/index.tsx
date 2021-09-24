@@ -1,5 +1,5 @@
 // import Image from 'next/image';
-import BreedsList from '../../components/BreedsList';
+import BreedsList from "../../components/BreedsList";
 // import Breed from '../../components/BreedsList/Breed';
 
 const BreedsPage: React.FC = () => {

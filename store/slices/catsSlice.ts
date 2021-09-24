@@ -1,9 +1,9 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState = <Cat[]>[];
 
 const catsSlice = createSlice({
-  name: 'cats',
+  name: "cats",
   initialState,
   reducers: {
     setCats(_, action: PayloadAction<CatApiResponse[]>) {

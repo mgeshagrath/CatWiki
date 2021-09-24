@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
 
 :root {
   /* COLORS */
@@ -20,7 +20,7 @@
 
   /* FONT FAMILY */
 
-  --font-primary: 'Montserrat', sans-serif;
+  --font-primary: "Montserrat", sans-serif;
 
   /* FONTS */
   --font-xsmall: 1rem;
@@ -65,9 +65,9 @@
   --max-width: 144rem;
   --min-height: 100vh;
 
-  --cursor-white: url('/images/cursor/PawPrint-white.svg');
-  --cursor-black: url('/images/cursor/PawPrint-black.svg');
-  --hero: url('/images/HeroImagelg.png');
+  --cursor-white: url("/images/cursor/PawPrint-white.svg");
+  --cursor-black: url("/images/cursor/PawPrint-black.svg");
+  --hero: url("/images/HeroImagelg.png");
 }
 
 *,

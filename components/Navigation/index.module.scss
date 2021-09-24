@@ -39,7 +39,7 @@
     }
 
     &::after {
-      content: '';
+      content: "";
       bottom: -4px;
       width: 0;
       margin: var(--margin-auto);
@@ -59,7 +59,7 @@
 
   .selected {
     &::before {
-      content: '';
+      content: "";
       top: -7px;
       width: 100%;
       border-radius: 4px 4px 0 0;

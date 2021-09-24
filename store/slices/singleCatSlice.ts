@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 interface SingleCat {
   id: string;
@@ -22,7 +22,7 @@ interface SingleCat {
 const initialState = <SingleCat>{};
 
 const singleCatSlice = createSlice({
-  name: 'single cat',
+  name: "single cat",
   initialState,
   reducers: {
     setCat(_, action) {

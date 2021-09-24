@@ -1,5 +1,5 @@
-import axios from 'axios';
+import axios from "axios";
 
 export const catApi = axios.create({
-  baseURL: 'https://api.thecatapi.com/v1/',
+  baseURL: "https://api.thecatapi.com/v1/",
 });
