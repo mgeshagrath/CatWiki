@@ -34,3 +34,5 @@ interface CatApiResponse extends Cat {
 }
 
 // interface CatImageApiResponse extends CatApiResponse {}
+
+// Generic css classes

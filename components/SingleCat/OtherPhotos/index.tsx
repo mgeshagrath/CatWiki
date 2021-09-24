@@ -1,8 +1,8 @@
-import { useAppSelector } from '../../../store/types';
+import { useAppSelector } from "../../../store/types";
 // import Image from 'next/image';
-import Heading from '../../ui/heading';
-import styles from './index.module.scss';
-import LoadedImage from '../../ui/LoadedImage';
+import Heading from "../../UI/Heading";
+import styles from "./index.module.scss";
+import LoadedImage from "../../UI/LoadedImage";
 
 const OtherPhotos: React.FC = () => {
   const catImages = useAppSelector((state) => state.singleCat.images);
@@ -13,7 +13,7 @@ const OtherPhotos: React.FC = () => {
       {catImages?.map((url) => (
         <div key={Math.random()}>
           <LoadedImage
-            data={{ imagePath: url, width: '280px', height: '280px' }}
+            data={{ imagePath: url, width: "280px", height: "280px" }}
           />
         </div>
       ))}

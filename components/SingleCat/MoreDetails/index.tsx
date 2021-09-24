@@ -1,15 +1,15 @@
 // import Image from 'next/image';
-import { useAppSelector } from '../../../store/types';
-import LoadedImage from '../../ui/LoadedImage';
-import Spinner from '../../ui/spinner';
-import styles from './index.module.scss';
+import { useAppSelector } from "../../../store/types";
+import LoadedImage from "../../UI/LoadedImage";
+import Spinner from "../../UI/Spinner";
+import styles from "./index.module.scss";
 
 const MoreDetails: React.FC = () => {
   const { profileImage } = useAppSelector((state) => state.singleCat);
   const imageConfig = {
     imagePath: profileImage,
-    width: '380px',
-    height: '380px',
+    width: "380px",
+    height: "380px",
   };
 
   // console.log(profileImage);

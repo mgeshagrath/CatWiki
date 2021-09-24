@@ -1,10 +1,10 @@
-import { AxiosResponse } from 'axios';
-import { GetStaticProps } from 'next';
-import { useEffect } from 'react';
-import { catApi } from '../lib/services';
-import { catsActions } from '../store/slices/catsSlice';
-import { useAppDispatch } from '../store/types';
-import Home from '../components/home';
+import { AxiosResponse } from "axios";
+import { GetStaticProps } from "next";
+import { useEffect } from "react";
+import { catApi } from "../lib/services";
+import { catsActions } from "../store/slices/catsSlice";
+import { useAppDispatch } from "../store/types";
+import Home from "../components/Home";
 
 // interface Kitties {
 //   id: string;
@@ -31,9 +31,9 @@ export const HomePage: React.FC<{ data: CatApiResponse[] }> = ({ data }) => {
 export default HomePage;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { data }: AxiosResponse<CatApiResponse[]> = await catApi.get('breeds', {
+  const { data }: AxiosResponse<CatApiResponse[]> = await catApi.get("breeds", {
     headers: {
-      'x-api-key': 'dec74740-77ab-4562-817d-2d0456e1a1aa',
+      "x-api-key": "dec74740-77ab-4562-817d-2d0456e1a1aa",
     },
   });
 

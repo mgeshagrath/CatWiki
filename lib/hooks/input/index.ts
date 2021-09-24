@@ -1,5 +1,5 @@
-import { REGEX_LETTERS_VALIDATION } from './../../CONSTANTS/index';
-import { useState, ChangeEvent, useEffect } from 'react';
+import { REGEX_LETTERS_VALIDATION } from "./../../CONSTANTS/index";
+import { useState, ChangeEvent, useEffect } from "react";
 
 interface DataReturned {
   value: string;
@@ -10,21 +10,21 @@ interface DataReturned {
 type readValueFn = (query: string) => void;
 
 export const useInputChanged = (readValueFn?: readValueFn): DataReturned => {
-  const [value, setValue] = useState('');
-  const [error, setError] = useState('');
+  const [value, setValue] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     if (!value) {
-      setError('');
+      setError("");
       return;
     }
 
     if (!REGEX_LETTERS_VALIDATION.test(value)) {
-      setError('Query must contain letters and whitespaces only!');
+      setError("Query must contain letters and whitespace only!");
       return;
     }
 
-    setError('');
+    setError("");
     readValueFn(value.trim());
   }, [value]);
 

@@ -1,13 +1,9 @@
-import { useRouter } from "next/dist/client/router";
-import { useEffect, useState } from "react";
-import Spinner from "../ui/spinner";
+import { useRouter } from "next/router";
+import { useEffect, useMemo, useState } from "react";
+import { getRandomCatName } from "../../lib/front-utilities";
+import { useAppSelector } from "../../store/types";
+import Spinner from "../UI/Spinner";
 import styles from "./index.module.scss";
-
-// const messages = {
-//   one: 'Putting milk on a bowl',
-//   two: 'Meow, meow, meow',
-//   three: 'Generating your random cat!',
-// };
 
 enum Messages {
   STAGE_1 = "Putting milk on a bowl",
@@ -17,25 +13,25 @@ enum Messages {
 
 const RandomCat: React.FC = () => {
   const [message, setMessage] = useState<string>(Messages.STAGE_1);
+  const { catsList } = useAppSelector((state) => state);
   const router = useRouter();
 
+  const catName = useMemo(() => getRandomCatName(catsList), []);
+
   useEffect(() => {
-    const loadingMessage = setTimeout(() => {
+    const stageMessage = setTimeout(() => {
       switch (message) {
-        case Messages.STAGE_1: {
-          setMessage((_) => Messages.STAGE_2);
+        case Messages.STAGE_1:
+          setMessage(() => Messages.STAGE_2);
           break;
-        }
-        case Messages.STAGE_2: {
-          setMessage((_) => Messages.STAGE_3);
+        case Messages.STAGE_2:
+          setMessage(() => Messages.STAGE_3);
           break;
-        }
-        default: {
-          router.push("breeds/somali");
-        }
+        default:
+          router.replace(`breeds/${catName}`);
       }
-    }, 1000);
-    return () => clearInterval(loadingMessage);
+    }, 500);
+    return () => clearInterval(stageMessage);
   }, [message]);
 
   return (

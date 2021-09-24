@@ -3,7 +3,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/dist/client/router";
 import { useEffect } from "react";
 import SingleCat from "../../components/SingleCat";
-import Spinner from "../../components/ui/spinner";
+import Spinner from "../../components/UI/Spinner";
 import { groupKittyData } from "../../lib/back-utilities";
 import { catApi } from "../../lib/services";
 import { singleCatActions } from "../../store/slices/singleCatSlice";
